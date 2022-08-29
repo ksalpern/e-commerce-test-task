@@ -1,11 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import { Provider } from "react-redux";
-import { store, persistor } from "./store/store";
-import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
 import "./index.css";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import { Provider } from "react-redux";
+import store from "./app/store";
 
 export const client = new ApolloClient({
   uri: "https://localhost:4000",
@@ -19,9 +18,7 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
+        <App />
       </Provider>
     </ApolloProvider>
   </React.StrictMode>
