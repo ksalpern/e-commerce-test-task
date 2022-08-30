@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import CardsContainer from "./components/CardsContainer/CardsContainer";
 import Navbar from "./components/Navbar/Navbar";
 
 export default class App extends Component {
@@ -9,8 +11,8 @@ export default class App extends Component {
         <Router>
           <Navbar />
           <Routes>
-            {/* <Route path="/" element={<CardsContainer title="Home" />} />
-            <Route path="/pages/all" element={<All />} />
+             <Route path="/" element={<CardsContainer title="Home" />} />
+           {/* <Route path="/pages/all" element={<All />} />
             <Route path="/pages/clothes" element={<Clothes />} />
             <Route path="/pages/tech" element={<Tech />} />
             <Route path="/products/:id" element={<Product />} />
