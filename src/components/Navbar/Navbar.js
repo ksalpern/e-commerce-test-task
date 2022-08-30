@@ -8,6 +8,7 @@ import { selectCartItemsCount } from '../../app/cartSelectors'
 
 import cart from "../../assets/cart.svg";
 import greenCart from "../../assets/greenCart.svg";
+import DisplayCurrency from "../../features/DisplayCurrency";
 
 class Navbar extends Component {
   constructor(props) {
@@ -70,7 +71,7 @@ class Navbar extends Component {
                   : "navbar__dropdown-show"
               }
             >
-              {/* Display currency component */}
+              <DisplayCurrency/>
               currency
             </ul>
             <div className="navbar__cart">
