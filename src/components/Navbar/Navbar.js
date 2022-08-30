@@ -9,6 +9,7 @@ import { selectCartItemsCount } from '../../app/cartSelectors'
 import cart from "../../assets/cart.svg";
 import greenCart from "../../assets/greenCart.svg";
 import DisplayCurrency from "../../features/DisplayCurrency";
+import MiniCart from "./MiniCart/MiniCart";
 
 class Navbar extends Component {
   constructor(props) {
@@ -81,7 +82,7 @@ class Navbar extends Component {
                 </span>
                 <img src={cart} alt="cart" />
               </button>
-              {/* {this.props.show && <MiniCart  totalItems={this.props.totalNumberCartItems}/>} */}
+              {this.props.show && <MiniCart  totalItems={this.props.totalNumberCartItems}/>}
             </div>
           </section>
         </div>
