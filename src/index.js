@@ -6,8 +6,8 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { Provider } from "react-redux";
 import store from "./app/store";
 
-export const client = new ApolloClient({
-  uri: "https://localhost:4000",
+const client = new ApolloClient({
+  uri: "http://localhost:4000/",
   cache: new InMemoryCache(),
 });
 
