@@ -9,3 +9,28 @@ export const CURRENCIES_QUERY = gql`
     }
   }
 `;
+
+// products query
+
+export const PRODUCTS_QUERY = gql`
+  query GetProducts {
+    categories {
+      name
+      products {
+        id
+        name
+        inStock
+        description
+        brand
+        gallery
+        prices {
+          amount
+          currency {
+            label
+            symbol
+          }
+        }
+      }
+    }
+  }
+`;
