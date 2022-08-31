@@ -37,7 +37,7 @@ class Navbar extends Component {
                 All
               </NavLink>
             </li>
-            <li className="navbar__links">
+            <li className="navbar__links center-link">
               <NavLink
                 to="./pages/clothes"
                 className={path === "/pages/clothes" ? "active" : ""}

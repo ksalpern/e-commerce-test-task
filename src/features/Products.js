@@ -14,22 +14,22 @@ const DisplayProducts = (props) => {
     ({ id, inStock, name, gallery, prices }) => {
       return (
         <NavLink key={id} to={inStock && `./products/${id}`}>
-          <section className={inStock ? "card" : "card-disable"}>
-            <div className="card-image">
-              <div className="product-image">
+          <section className={inStock ? "displayProducts__card" : "displayProducts__card-disable"}>
+            <div className="displayProducts__card-image">
+              <div className="displayProducts__product-image">
                 <img
-                  className="product"
+                  className="displayProducts__product"
                   src={gallery[5] ? gallery[5] : gallery[0]}
                   alt={id}
                 />
-                <button className="cart-icon">
+                <button className="displayProducts__cart-icon">
                   <img src={Cart} alt="" />
                 </button>
               </div>
             </div>
-            <section className="card-description">
-              <h4 className="card-heading">{name}</h4>
-              <p className="cost">
+            <section className="displayProducts__card-description">
+              <h4 className="displayProducts__card-header">{name}</h4>
+              <p className="displayProducts__cost">
                 <strong>
                   {prices[0].currency.symbol}
                   {prices[0].amount}
