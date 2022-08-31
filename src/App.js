@@ -5,6 +5,7 @@ import CardsContainer from "./components/CardsContainer/CardsContainer";
 import Navbar from "./components/Navbar/Navbar";
 import AllContainer from "./components/Pages/All/AllContainer";
 import ClothesContainer from "./components/Pages/Clothes/ClothesContainer";
+import TechContainer from "./components/Pages/Tech/TechContainer";
 
 export default class App extends Component {
   render() {
@@ -16,8 +17,8 @@ export default class App extends Component {
              <Route path="/" element={<CardsContainer title="Home" />} />
             <Route path="/pages/all" element={<AllContainer />} />
             <Route path="/pages/clothes" element={<ClothesContainer />} />
-           {/* <Route path="/pages/tech" element={<Tech />} />
-            <Route path="/products/:id" element={<Product />} />
+           <Route path="/pages/tech" element={<TechContainer />} />
+            {/* <Route path="/products/:id" element={<Product />} />
             <Route path="/pages/all/products/:id" element={<Product />} />
             <Route path="/pages/clothes/products/:id" element={<Product />} />
             <Route path="/pages/tech/products/:id" element={<Product />} />
