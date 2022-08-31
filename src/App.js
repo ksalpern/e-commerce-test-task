@@ -21,9 +21,9 @@ export default class App extends Component {
             <Route path="/pages/clothes" element={<ClothesContainer />} />
            <Route path="/pages/tech" element={<TechContainer />} />
              <Route path="/products/:id" element={<ProductContainer />} />
-           {/* <Route path="/pages/all/products/:id" element={<Product />} />
-            <Route path="/pages/clothes/products/:id" element={<Product />} />
-            <Route path="/pages/tech/products/:id" element={<Product />} />*/}
+            <Route path="/pages/all/products/:id" element={<ProductContainer />} />
+            <Route path="/pages/clothes/products/:id" element={<ProductContainer />} />
+            <Route path="/pages/tech/products/:id" element={<ProductContainer />} />
             <Route path="/pages/Cart" element={<CartContainer />} /> 
           </Routes>
         </Router>
