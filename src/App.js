@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CardsContainer from "./components/CardsContainer/CardsContainer";
 import Navbar from "./components/Navbar/Navbar";
 import AllContainer from "./components/Pages/All/AllContainer";
+import ClothesContainer from "./components/Pages/Clothes/ClothesContainer";
 
 export default class App extends Component {
   render() {
@@ -14,8 +15,8 @@ export default class App extends Component {
           <Routes>
              <Route path="/" element={<CardsContainer title="Home" />} />
             <Route path="/pages/all" element={<AllContainer />} />
-           {/* <Route path="/pages/clothes" element={<Clothes />} />
-            <Route path="/pages/tech" element={<Tech />} />
+            <Route path="/pages/clothes" element={<ClothesContainer />} />
+           {/* <Route path="/pages/tech" element={<Tech />} />
             <Route path="/products/:id" element={<Product />} />
             <Route path="/pages/all/products/:id" element={<Product />} />
             <Route path="/pages/clothes/products/:id" element={<Product />} />
