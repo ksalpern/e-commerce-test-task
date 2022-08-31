@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import CardsContainer from "./components/CardsContainer/CardsContainer";
+import CartContainer from "./components/Cart/CartContainer";
 import Navbar from "./components/Navbar/Navbar";
 import AllContainer from "./components/Pages/All/AllContainer";
 import ClothesContainer from "./components/Pages/Clothes/ClothesContainer";
@@ -21,8 +22,8 @@ export default class App extends Component {
             {/* <Route path="/products/:id" element={<Product />} />
             <Route path="/pages/all/products/:id" element={<Product />} />
             <Route path="/pages/clothes/products/:id" element={<Product />} />
-            <Route path="/pages/tech/products/:id" element={<Product />} />
-            <Route path="/pages/Cart" element={<Cart />} /> */}
+            <Route path="/pages/tech/products/:id" element={<Product />} />*/}
+            <Route path="/pages/Cart" element={<CartContainer />} /> 
           </Routes>
         </Router>
       </div>
