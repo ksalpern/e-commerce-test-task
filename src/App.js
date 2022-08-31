@@ -16,15 +16,24 @@ export default class App extends Component {
         <Router>
           <Navbar />
           <Routes>
-             <Route path="/" element={<CardsContainer title="Home" />} />
+            <Route path="/" element={<CardsContainer title="Home" />} />
             <Route path="/pages/all" element={<AllContainer />} />
             <Route path="/pages/clothes" element={<ClothesContainer />} />
-           <Route path="/pages/tech" element={<TechContainer />} />
-             <Route path="/products/:id" element={<ProductContainer />} />
-            <Route path="/pages/all/products/:id" element={<ProductContainer />} />
-            <Route path="/pages/clothes/products/:id" element={<ProductContainer />} />
-            <Route path="/pages/tech/products/:id" element={<ProductContainer />} />
-            <Route path="/pages/Cart" element={<CartContainer />} /> 
+            <Route path="/pages/tech" element={<TechContainer />} />
+            <Route path="/products/:id" element={<ProductContainer />} />
+            <Route
+              path="/pages/all/products/:id"
+              element={<ProductContainer />}
+            />
+            <Route
+              path="/pages/clothes/products/:id"
+              element={<ProductContainer />}
+            />
+            <Route
+              path="/pages/tech/products/:id"
+              element={<ProductContainer />}
+            />
+            <Route path="/pages/Cart" element={<CartContainer />} />
           </Routes>
         </Router>
       </div>
