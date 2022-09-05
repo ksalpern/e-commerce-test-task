@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import "./Minicart.css";
+import "../App.css";
 
 class Minicart extends Component {
   constructor(props) {

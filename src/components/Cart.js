@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import busket from "../assets/cartWhite.svg";
 import "./Cart.css";
+import "../App.css";
 
 class Cart extends Component {
   constructor(props) {

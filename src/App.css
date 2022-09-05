@@ -3,6 +3,9 @@
   color: '#1D1F22';
 }
 
+#main{
+ padding-top: 80px;
+}
 
 /* MODAL STYLES */
 .busket__modal {
@@ -344,10 +347,6 @@
   font-weight: 500;
 }
 
-.busketLogoWheel {
-  transform: translate(100%, 0%);
-}
-
 .currencySelectorList,
 .selector__list {
   padding: 20px 25px 0px 25px;
@@ -355,9 +354,4 @@
 
 .currencySymbol {
   margin-right: 10px;
-}
-
-.loadingHeader {
-  font-family: 'Raleway';
-  font-size: 36px;
 }
