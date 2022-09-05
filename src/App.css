@@ -1,0 +1,363 @@
+.mainContainer {
+  background-color: 'white';
+  color: '#1D1F22';
+}
+
+
+/* MODAL STYLES */
+.busket__modal {
+  position: fixed;
+  width: 325px;
+  height: 540px;
+  right:87px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  outline: none;
+  padding: 17px;
+  
+}
+
+/* Currency selector modal */
+.selector__modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 114px;
+  min-height: 170px;
+  font-size: 22px;
+  right:78px;
+  overflow: hidden;
+  box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.3);
+  background: #fff;
+  border-radius: 4px;
+  outline: none;
+}
+
+.busket__modal-overlay {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(57, 55, 72, 0.22);
+}
+/* Currency selector modal */
+
+
+.selector_modal_overlay {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* CHOSEN ATTRIBUTE STYLES */
+.activeSwatch {
+  border: 3px solid !important;
+  border-image-slice: 1 !important;
+  border-image-source: linear-gradient(45deg, blue, greenyellow) !important;
+}
+
+.activeAtt {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* PRODUCT ITEM STYLES */
+.rowBusket {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  min-height: 185px;
+  margin-bottom: 41px;
+}
+
+.rowLeftBusket {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 200px);
+  
+}
+
+.rowRightBusket {
+  display: flex;
+}
+
+.counterBusket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.counterIconBusket {
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+}
+
+.imageBusket {
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 141px;
+}
+
+.brandBusket {
+  font-family: "Raleway";
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 16px;
+}
+.nameBusket {
+  font-family: "Raleway";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 16px;
+}
+.priceBusket{
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 18px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+.attListBusket {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  flex-direction: column;
+
+
+}
+.attNameBusket {
+  font-family: 'Raleway';
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 18px;
+}
+.attListRowBusket {
+  display: flex;
+  width: 50%;
+  margin-top: 12px;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.attItemBusket {
+  width: 63px;
+  min-height: 45px;
+  
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  border: 1px solid #1d1f22;
+  cursor: pointer;
+}
+
+.rowMinicart {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  margin-bottom: 41px;
+}
+
+.rowLeftMinicart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 140px);
+  padding-right: 8px;
+}
+
+.rowRightMinicart {
+  display: flex;
+  height: 100%;
+}
+
+.counterMinicart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.counterIconMinicart {
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+}
+
+.imageMinicart {
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 137px;
+  width: 105px;
+}
+
+.brandNameMinicart {
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+  margin-bottom: 5px;
+}
+
+.priceMinicart{
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.attListMinicart {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  
+}
+.attListRowMinicart {
+  display: flex;
+  width: 100%;
+
+  margin-top: 12px;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.attNameMinicart {
+  font-family: 'Raleway';
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 13px;
+}
+.attItemMinicart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  border: 1px solid #1d1f22;
+  cursor: pointer;
+  min-width: 24px;
+  height: 24px;
+  
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.link {
+  text-decoration: none;
+  color: #1D1F22;
+}
+
+.navLink {
+  text-decoration: none;
+}
+
+.currencySelectorArea {
+  cursor: pointer;
+  display: flex;
+}
+
+.busketLogoContainer {
+  position: relative;
+  cursor: pointer;
+}
+
+.busketCounterHeader {
+  margin-right: 10px;
+  font-size: 18px;
+  font-family: Raleway;
+  font-weight: 500;
+}
+
+.minicartTitle {
+  padding-bottom: 23px;
+}
+
+.minicartBottomContainer {
+  display: fixed;
+}
+
+.minicartButtonsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.minicartTotalContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  font-weight: bold;
+}
+
+.productPage__container {
+  padding-left: 100px;
+  padding-right: 200px;
+}
+
+.pdpAttListContainer {
+  display: flex;
+  flex-direction: column;
+  width: 292px;
+}
+
+.pdpAttList {
+  display: grid;
+  justify-content: start;
+  grid-template-columns:
+    repeat(auto-fill, 63px);
+  grid-gap: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.pdpOutOfStock {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.busketLogoWheel {
+  transform: translate(100%, 0%);
+}
+
+.currencySelectorList,
+.selector__list {
+  padding: 20px 25px 0px 25px;
+}
+
+.currencySymbol {
+  margin-right: 10px;
+}
+
+.loadingHeader {
+  font-family: 'Raleway';
+  font-size: 36px;
+}

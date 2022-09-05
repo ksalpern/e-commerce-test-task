@@ -1,42 +1,73 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { connect } from "react-redux";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import CardsContainer from "./components/CardsContainer/CardsContainer";
-import CartContainer from "./components/Cart/CartContainer";
-import Navbar from "./components/Navbar/Navbar";
-import AllContainer from "./components/Pages/All/AllContainer";
-import ClothesContainer from "./components/Pages/Clothes/ClothesContainer";
-import ProductContainer from "./components/Pages/Product/ProductContainer";
-import TechContainer from "./components/Pages/Tech/TechContainer";
+import { loadCurrencies } from "./store/currenciesReducer";
+import { loadCategories } from "./store/categoriesReducer";
 
-export default class App extends Component {
+import Container from "./components/Container";
+import ProductListing from "./components/ProductListing";
+import ProductPage from "./components/ProductPage";
+import CartPage from "./components/CartPage";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.selectCurrency = this.selectCurrency.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.saveCurrenciesToStore();
+    this.props.saveCategoriesToStore();
+  }
+
+  selectCurrency(e) {
+    this.setState({
+      currency: e.target.value,
+    });
+  }
+
   render() {
     return (
-      <div className="app">
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<CardsContainer title="Home" />} />
-            <Route path="/pages/all" element={<AllContainer />} />
-            <Route path="/pages/clothes" element={<ClothesContainer />} />
-            <Route path="/pages/tech" element={<TechContainer />} />
-            <Route path="/products/:id" element={<ProductContainer />} />
-            <Route
-              path="/pages/all/products/:id"
-              element={<ProductContainer />}
-            />
-            <Route
-              path="/pages/clothes/products/:id"
-              element={<ProductContainer />}
-            />
-            <Route
-              path="/pages/tech/products/:id"
-              element={<ProductContainer />}
-            />
-            <Route path="/pages/Cart" element={<CartContainer />} />
-          </Routes>
-        </Router>
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/">
+            <Container>
+              <ProductListing />
+            </Container>
+          </Route>
+          <Route exact path="/cart">
+            <Container>
+              <CartPage />
+            </Container>
+          </Route>
+          <Route path="/:category/:id">
+            <Container>
+              <ProductPage />
+            </Container>
+          </Route>
+          <Route path="/:category">
+            <Container>
+              <ProductListing />
+            </Container>
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    category: state.products.category,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    saveCurrenciesToStore: () => loadCurrencies()(dispatch),
+    saveCategoriesToStore: () => loadCategories()(dispatch),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

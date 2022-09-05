@@ -1,28 +1,27 @@
 import { gql } from "@apollo/client";
 
-/* currency - navbar */
-export const CURRENCIES_QUERY = gql`
-  query GetCurrencies {
-    currencies {
-      label
-      symbol
-    }
-  }
-`;
-
-// products query
-
-export const PRODUCTS_QUERY = gql`
-  query GetProducts {
-    categories {
+// get products by category
+export const GET_PRODUCTS_QUERY = gql`
+  query ($cat: String!) {
+    category(input: { title: $cat }) {
       name
       products {
         id
         name
         inStock
-        description
-        brand
         gallery
+        description
+        category
+        brand
+        attributes {
+          id
+          name
+          items {
+            displayValue
+            value
+            id
+          }
+        }
         prices {
           amount
           currency {
@@ -31,6 +30,23 @@ export const PRODUCTS_QUERY = gql`
           }
         }
       }
+    }
+  }
+`;
+
+export const GET_CURRENCIES_QUERY = gql`
+  query {
+    currencies {
+      label
+      symbol
+    }
+  }
+`;
+
+export const GET_CATEGORIES_QUERY = gql`
+query {
+    categories {
+  		name
     }
   }
 `;

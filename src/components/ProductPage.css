@@ -1,0 +1,116 @@
+.productPage{
+    display: grid;
+    width: 100%;
+    min-height: 550px;
+    grid-template-columns: 1fr 6fr 3fr;
+    justify-content: space-between;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    font-family: "Raleway";
+    color: #1d1f22;
+}
+
+.productPage__image-row{
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    margin-right: 50px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.productPage__image-item{
+    max-width: 100%;
+    min-width: 100%;
+    height: 90px;
+    cursor: pointer;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #eee;
+    margin-bottom: 32px;
+  
+   
+}
+
+.productPage__image-item:hover {
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.3);
+}
+
+.productPage__image{
+    width: 100%;
+    max-height: 550px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #eee;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.productPage__info{
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
+    width: 292px;
+}
+
+.productPage__brand{
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 27px;
+}
+
+.productPage__name{
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 43px;
+}
+
+.productPage__att-list{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.productPage__header{
+    font-weight: 700;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+}
+
+.productPage__price{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.productPage__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 292px;
+    height: 52px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #5ece7b;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.productPage__descr{
+    overflow: hidden;
+    max-height: 250px;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 12;
+}

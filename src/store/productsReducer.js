@@ -1,12 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { client } from "../index";
-import {
-  GET_CATEGORIES_QUERY,
-  GET_CURRENCIES_QUERY,
-  GET_PRODUCTS_QUERY,
-} from "./queries";
+import { GET_PRODUCTS_QUERY } from "./Queries";
 
-// Products initial state
 const initProductsState = {
   allProducts: [],
   category: "all",
@@ -14,7 +9,6 @@ const initProductsState = {
   failedToLoadProducts: false,
 };
 
-// Products reducer
 export const loadProducts = createAsyncThunk(
   "products/loadProducts",
   async (cat) => {
@@ -55,21 +49,3 @@ export const productsSlice = createSlice({
 });
 
 export default productsSlice.reducer;
-
-////////////////////////////////////////////////////
-
-export const loadCurrencies = createAsyncThunk(
-  "currencies/loadCurrencies",
-  async () => {
-    let data = await client.query({ query: GET_CURRENCIES_QUERY });
-    return data.data.currencies;
-  }
-);
-
-export const loadCategories = createAsyncThunk(
-  "categories/loadCategories",
-  async () => {
-    let data = await client.query({ query: GET_CATEGORIES_QUERY });
-    return data.data.categories;
-  }
-);
