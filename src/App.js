@@ -30,8 +30,8 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/cart">
-            <CartPage />
+          <Route path="/">
+            <ProductListing />
           </Route>
           <Route path="/:category/:id">
             <ProductPage />
@@ -39,8 +39,8 @@ class App extends Component {
           <Route path="/:category">
             <ProductListing />
           </Route>
-          <Route path="/">
-            <ProductListing />
+          <Route exact path="/cart">
+            <CartPage />
           </Route>
         </Switch>
       </Router>
