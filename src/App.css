@@ -4,25 +4,24 @@
 }
 
 #main{
- padding-top: 80px;
+ padding-top: calc(0px + (80 - 0) * ((100vw - 320px) / (1440 - 320)));
 }
 
 /* MODAL STYLES */
 .busket__modal {
   position: fixed;
   width: 325px;
-  height: 540px;
-  right:87px;
+  height: 677px;
+  right: 72px;
+  top: 78px;
   overflow: hidden;
   border: 1px solid #ccc;
   background: #fff;
   border-radius: 4px;
   outline: none;
   padding: 17px;
-  
 }
 
-/* Currency selector modal */
 .selector__modal {
   position: fixed;
   display: flex;
@@ -46,16 +45,16 @@
   right: 0;
   bottom: 0;
   background-color: rgba(57, 55, 72, 0.22);
+   z-index: 3;
 }
-/* Currency selector modal */
 
-
-.selector_modal_overlay {
+.selector__modal-overlay {
   position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
+  top: 65px;
+  right: 78px;
   bottom: 0;
+  outline: none;
+  z-index: 3;
 }
 
 /* CHOSEN ATTRIBUTE STYLES */
@@ -133,6 +132,7 @@
   line-height: 27px;
   margin-bottom: 16px;
 }
+
 .priceBusket{
   font-family: "Raleway";
   font-size: 24px;
@@ -141,6 +141,7 @@
   margin-top: 16px;
   margin-bottom: 12px;
 }
+
 .attListBusket {
   display: flex;
   width: 100%;
@@ -150,12 +151,14 @@
 
 
 }
+
 .attNameBusket {
   font-family: 'Raleway';
   font-weight: 500;
   line-height: 24px;
   font-size: 18px;
 }
+
 .attListRowBusket {
   display: flex;
   width: 50%;
@@ -164,10 +167,10 @@
   align-items: center;
   
 }
+
 .attItemBusket {
   width: 63px;
   min-height: 45px;
-  
   font-size: 16px;
   line-height: 18px;
   display: flex;
@@ -207,14 +210,23 @@
   cursor: pointer;
 }
 
-.counterIconMinicart {
+.minicart__counter {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #1D1F22;
   justify-content: center;
   align-items: center;
   width: 24px;
   height: 24px;
   font-size: 16px;
+}
+
+.amount{
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 160%;
+  color: #1D1F22;
 }
 
 .imageMinicart {
@@ -226,12 +238,13 @@
   width: 105px;
 }
 
-.brandNameMinicart {
+.minicart__brand {
   font-family: "Raleway";
   font-size: 16px;
   font-weight: 300;
   line-height: 25px;
   margin-bottom: 5px;
+  color: #1D1F22;
 }
 
 .priceMinicart{
@@ -248,20 +261,26 @@
 }
 .attListRowMinicart {
   display: flex;
-  width: 100%;
+  flex-direction: column;
 
+  width: 100%;
   margin-top: 12px;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   
 }
-.attNameMinicart {
+
+.minicart__att-name {
   font-family: 'Raleway';
-  font-weight: 500;
-  line-height: 24px;
-  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #1D1F22;
+  margin-bottom: 8px;
 }
-.attItemMinicart {
+
+.minicart__att-item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -270,7 +289,6 @@
   cursor: pointer;
   min-width: 24px;
   height: 24px;
-  
   font-size: 14px;
   line-height: 18px;
 }
@@ -287,11 +305,6 @@
 .currencySelectorArea {
   cursor: pointer;
   display: flex;
-}
-
-.busketLogoContainer {
-  position: relative;
-  cursor: pointer;
 }
 
 .busketCounterHeader {
@@ -347,9 +360,9 @@
   font-weight: 500;
 }
 
-.currencySelectorList,
-.selector__list {
-  padding: 20px 25px 0px 25px;
+.currencySelectorList{
+  
+ 
 }
 
 .currencySymbol {

@@ -6,6 +6,19 @@
     justify-content: space-between;
 }
 
+.minicart__title{
+    margin-bottom: 32px;
+    margin-top: 13px;
+}
+
+.minicart__myBag{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1D1F22;
+}
+
 .minicart__total{
     display: flex;
     justify-content: space-between;

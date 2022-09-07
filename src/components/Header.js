@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import MinicartModal from "./Modals/MinicartModal";
-import CurrencySelectorModal from "./Modals/CurrencySelectorModal";
-import "./Header.css";
-import "../App.css";
+import MinicartModal from "./MinicartModal";
+import CurrencySelectorModal from "./CurrencySelectorModal";
 
 import logo from "../assets/greenCart.svg";
 import busket from "../assets/cart.svg";
+import arrow from "../assets/down-arrow.png";
+import "./Header.css";
+import "../App.css";
 
 class Header extends Component {
   constructor(props) {
@@ -32,9 +33,9 @@ class Header extends Component {
   toggleModalSelector() {
     this.setState({ isOpenSelector: !this.state.isOpenSelector });
     if (!this.state.isOpenSelector) {
-      this.selectorArrow.current.style.transform = "rotate(270deg)";
+      this.selectorArrow.current.style.transform = "rotate(180deg)";
     } else {
-      this.selectorArrow.current.style.transform = "rotate(90deg)";
+      this.selectorArrow.current.style.transform = "rotate(360deg)";
     }
   }
 
@@ -63,7 +64,10 @@ class Header extends Component {
             );
           })}
         </div>
-        <img src={logo} alt="" />
+        <NavLink className="navLink" to="/">
+          {" "}
+          <img src={logo} alt="" />
+        </NavLink>
         <div className="header__cart">
           <div
             className="header__currency-selector"
@@ -73,7 +77,7 @@ class Header extends Component {
               {this.props.currency.symbol}
             </span>
             <span className="arrow" ref={this.selectorArrow}>
-              {">"}
+              <img src={arrow} alt="v" />
             </span>
           </div>
           <div className="header__cart-logo" onClick={this.toggleModalMinicart}>
@@ -82,7 +86,7 @@ class Header extends Component {
                 {this.props.busketCounter}
               </div>
             )}
-            <img className="header__cart-img" src={busket} alt='' />
+            <img className="header__cart-img" src={busket} alt="" />
           </div>
 
           <MinicartModal

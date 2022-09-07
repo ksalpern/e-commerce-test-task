@@ -1,6 +1,6 @@
 .productListing{
-    padding-right: 115px;
-    padding-left: 100px;
+    padding-right: calc(0px + (100 - 0) * ((100vw - 320px) / (1440 - 320)));
+    padding-left: calc(10px + (100 - 10) * ((100vw - 320px) / (1440 - 320)));
     padding-bottom: 190px;
 }
 

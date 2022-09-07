@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Cart from "../components/Cart";
+import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import { loadProducts } from "../store/productsReducer";
+
+import Cart from "../components/Cart";
 import "./ProductListing.css";
 
 class ProductListing extends Component {

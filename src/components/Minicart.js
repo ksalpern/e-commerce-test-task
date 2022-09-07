@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import CartItem from "./CartItem";
+import BusketItem from "./BusketItem";
+
 import "./Minicart.css";
 import "../App.css";
 
@@ -34,13 +35,13 @@ class Minicart extends Component {
     return (
       <div className="minicart">
         <div className="minicart__title">
-          {<span>My Bag,</span>}
+          {<span className="minicart__myBag">My Bag,</span>}{" "}
           {`${this.props.busketCounter} items`}
         </div>
         <div className="minicart__items">
           {this.props.busketProducts.map((product, index) => {
             return (
-              <CartItem
+              <BusketItem
                 busket={false}
                 key={index}
                 productIndex={index}

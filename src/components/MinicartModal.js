@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
-import "../../App.css";
+import "../App.css";
 
-import Minicart from "../Minicart";
+import Minicart from "./Minicart";
 Modal.setAppElement("#root");
 
 export default class MinicartModal extends Component {

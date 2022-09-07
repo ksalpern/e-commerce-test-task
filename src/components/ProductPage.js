@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import parse from "html-react-parser";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import styled from "styled-components";
+import { loadProduct } from "../store/productReducer";
+
 import "./ProductPage.css";
 import "../App.css";
-import { loadProduct } from "../store/productReducer";
+import styled from "styled-components";
 
 class ProductPage extends Component {
   constructor(props) {

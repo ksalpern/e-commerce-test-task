@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import CartItem from "./CartItem";
+import BusketItem from "./BusketItem";
 
 class CartPage extends Component {
   render() {
@@ -13,7 +13,7 @@ class CartPage extends Component {
           : this.props.busketProducts
         ).map((product, index) => {
           return (
-            <CartItem
+            <BusketItem
               busket={true}
               key={product.id}
               product={product}
@@ -39,7 +39,6 @@ const Container = styled.div`
   padding-right: 242px;
   padding-left: 100px;
 `;
-
 const CartTitle = styled.h2`
   font-family: Raleway;
   font-size: 32px;

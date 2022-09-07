@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { connect } from "react-redux";
 import { loadCurrencies } from "./store/currenciesReducer";
 import { loadCategories } from "./store/categoriesReducer";
 
-import Container from "./components/Container";
-import ProductListing from "./components/ProductListing";
 import ProductPage from "./components/ProductPage";
 import CartPage from "./components/CartPage";
+import Container from "./components/Container";
+import ProductListing from "./components/ProductListing";
 
 class App extends Component {
   constructor(props) {
@@ -31,11 +31,6 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/">
-            <Container>
-              <ProductListing />
-            </Container>
-          </Route>
           <Route exact path="/cart">
             <Container>
               <CartPage />
@@ -47,6 +42,11 @@ class App extends Component {
             </Container>
           </Route>
           <Route path="/:category">
+            <Container>
+              <ProductListing />
+            </Container>
+          </Route>
+          <Route path="/">
             <Container>
               <ProductListing />
             </Container>

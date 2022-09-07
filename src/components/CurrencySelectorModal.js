@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
 import { connect } from "react-redux";
-
 import styled from "styled-components";
-import "../../App.css";
-
+import "../App.css";
 Modal.setAppElement("#root");
 
 class CurrencySelectorModal extends Component {
@@ -30,16 +28,16 @@ class CurrencySelectorModal extends Component {
         className="selector__modal"
         overlayClassName="selector__modal-overlay"
       >
-        <div className="selector__list">
+        <div className="currencySelectorList">
           {this.props.currencies.map((cur, index) => {
             return (
-              <CurrencyItem
+              <CurItem
                 onClick={() => this.handleCurrencyChange(cur)}
                 key={index}
               >
                 <span className="currencySymbol">{cur.symbol}</span>
                 {cur.label}
-              </CurrencyItem>
+              </CurItem>
             );
           })}
         </div>
@@ -47,7 +45,6 @@ class CurrencySelectorModal extends Component {
     );
   }
 }
-
 const mapStateToProps = (state) => {
   return {
     currencies: state.currencies.currencies,
@@ -66,16 +63,15 @@ export default connect(
   mapDispatchToProps
 )(CurrencySelectorModal);
 
-const CurrencyItem = styled.div`
+const CurItem = styled.div`
   cursor: pointer;
   font-family: "Raleway";
   color: #1d1f22;
   font-weight: 500;
   font-size: 18px;
   line-height: 160%;
-  margin-bottom: 20px;
+  padding: 8px 38px 8px 20px; 
   &: hover {
-    text-decoration: underline;
-    font-weight: 700;
+    background-color: #EEEEEE;
   }
 `;
