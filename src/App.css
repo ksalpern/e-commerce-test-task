@@ -335,11 +335,6 @@
   font-weight: bold;
 }
 
-.productPage__container {
-  padding-left: 100px;
-  padding-right: 200px;
-}
-
 .pdpAttListContainer {
   display: flex;
   flex-direction: column;
@@ -350,10 +345,19 @@
   display: grid;
   justify-content: start;
   grid-template-columns:
-    repeat(auto-fill, 63px);
+    repeat(auto-fill, 
+    calc(40px + (63 - 40) * ((100vw - 320px) / (1440 - 320))));
   grid-gap: 12px;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+@media(max-width: 510px){
+  .pdpAttList{
+      display: flex;
+      flex-wrap: wrap;
+      width: 200px;
+  }
 }
 
 .pdpOutOfStock {
