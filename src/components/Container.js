@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import '../App.css'
+import "../App.css";
+
 class Container extends Component {
   render() {
     return (

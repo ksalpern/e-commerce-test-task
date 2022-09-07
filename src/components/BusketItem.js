@@ -51,7 +51,7 @@ class BusketItem extends Component {
       atts: this.props.product.chosenAtt,
     });
   }
-  
+
   handleMinus(id) {
     this.props.saveCounterForProduct({
       type: "minus",

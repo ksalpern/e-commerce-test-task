@@ -8,6 +8,7 @@ import { loadProduct } from "../store/productReducer";
 import "./ProductPage.css";
 import "../App.css";
 import styled from "styled-components";
+import Container from "./Container";
 
 class ProductPage extends Component {
   constructor(props) {
@@ -98,124 +99,127 @@ class ProductPage extends Component {
 
   render() {
     return (
-      <div className="productPage__container">
-        <div>
-          {this.props.isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            <div>
-              {this.props.product.gallery && (
-                <div className="productPage">
-                  <div className="productPage__image-row">
-                    {this.props.product.gallery.map((image, index) => {
-                      return (
-                        <div
-                          className="productPage__image-item"
-                          key={index}
-                          style={{ backgroundImage: `url(${image})` }}
-                          onClick={() => this.setCurrentImage(index)}
-                          alt="product"
-                        ></div>
-                      );
-                    })}
-                  </div>
-
-                  <div
-                    className="productPage__image"
-                    style={{
-                      backgroundImage: `url(${
-                        this.props.product.gallery[this.state.currentImageIndex]
-                      })`,
-                    }}
-                    alt="main logo"
-                  ></div>
-                  <div className="productPage__info">
-                    <div className="productPage__brand">
-                      {this.props.product.brand}
-                    </div>
-                    <div className="productPage__name">
-                      {this.props.product.name}
-                    </div>
-                    <div className="productPage__att-list">
-                      {this.props.prodAtts.length !== 0 &&
-                        this.props.prodAtts.map((att, index) => {
-                          return (
-                            <div key={index} className="pdpAttListContainer">
-                              <div className="productPage__header">{`${att.id}:`}</div>
-                              <div className="pdpAttList">
-                                {att.items.map((attItem) => {
-                                  return (
-                                    <AttItem
-                                      key={attItem.value}
-                                      style={{
-                                        backgroundColor: attItem.value.includes(
-                                          "#"
-                                        )
-                                          ? attItem.value
-                                          : "white",
-                                      }}
-                                      className={[
-                                        attItem.active && !attItem.isSwatch
-                                          ? "activeAtt"
-                                          : null,
-                                        attItem.isSwatch && attItem.active
-                                          ? "activeSwatch"
-                                          : null,
-                                      ]}
-                                      onClick={() => {
-                                        this.handleAttClick(
-                                          att.id,
-                                          attItem.value
-                                        );
-                                      }}
-                                      id={attItem.value}
-                                    >
-                                      {!attItem.value.includes("#") &&
-                                        attItem.value}
-                                    </AttItem>
-                                  );
-                                })}
-                              </div>
-                            </div>
-                          );
-                        })}
-                    </div>
-                    <div className="productPage__header">Price:</div>
-                    <div>
-                      {this.props.product.prices.map((price, index) => {
+      <Container>
+        <div className="productPage__container">
+          <div>
+            {this.props.isLoading ? (
+              <p>Loading...</p>
+            ) : (
+              <div>
+                {this.props.product.gallery && (
+                  <div className="productPage">
+                    <div className="productPage__image-row">
+                      {this.props.product.gallery.map((image, index) => {
                         return (
-                          price.currency.label ===
-                            this.props.currency.label && (
-                            <div
-                              className="productPage__price"
-                              key={index}
-                            >{`${price.currency.symbol}${price.amount}`}</div>
-                          )
+                          <div
+                            className="productPage__image-item"
+                            key={index}
+                            style={{ backgroundImage: `url(${image})` }}
+                            onClick={() => this.setCurrentImage(index)}
+                            alt="product"
+                          ></div>
                         );
                       })}
                     </div>
-                    {this.props.product.inStock ? (
-                      <div
-                        className="productPage__btn"
-                        onClick={this.handleAddToBusketClick}
-                      >
-                        Add to cart
+
+                    <div
+                      className="productPage__image"
+                      style={{
+                        backgroundImage: `url(${
+                          this.props.product.gallery[
+                            this.state.currentImageIndex
+                          ]
+                        })`,
+                      }}
+                      alt="main logo"
+                    ></div>
+                    <div className="productPage__info">
+                      <div className="productPage__brand">
+                        {this.props.product.brand}
                       </div>
-                    ) : (
-                      <p className="pdpOutOfStock">
-                        Product is out of stock...
-                      </p>
-                    )}
-                    <div className="productPage__descr">
-                      {parse(this.props.product.description)}
+                      <div className="productPage__name">
+                        {this.props.product.name}
+                      </div>
+                      <div className="productPage__att-list">
+                        {this.props.prodAtts.length !== 0 &&
+                          this.props.prodAtts.map((att, index) => {
+                            return (
+                              <div key={index} className="pdpAttListContainer">
+                                <div className="productPage__header">{`${att.id}:`}</div>
+                                <div className="pdpAttList">
+                                  {att.items.map((attItem) => {
+                                    return (
+                                      <AttItem
+                                        key={attItem.value}
+                                        style={{
+                                          backgroundColor:
+                                            attItem.value.includes("#")
+                                              ? attItem.value
+                                              : "white",
+                                        }}
+                                        className={[
+                                          attItem.active && !attItem.isSwatch
+                                            ? "activeAtt"
+                                            : null,
+                                          attItem.isSwatch && attItem.active
+                                            ? "activeSwatch"
+                                            : null,
+                                        ]}
+                                        onClick={() => {
+                                          this.handleAttClick(
+                                            att.id,
+                                            attItem.value
+                                          );
+                                        }}
+                                        id={attItem.value}
+                                      >
+                                        {!attItem.value.includes("#") &&
+                                          attItem.value}
+                                      </AttItem>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            );
+                          })}
+                      </div>
+                      <div className="productPage__header">Price:</div>
+                      <div>
+                        {this.props.product.prices.map((price, index) => {
+                          return (
+                            price.currency.label ===
+                              this.props.currency.label && (
+                              <div
+                                className="productPage__price"
+                                key={index}
+                              >{`${price.currency.symbol}${price.amount}`}</div>
+                            )
+                          );
+                        })}
+                      </div>
+                      {this.props.product.inStock ? (
+                        <div
+                          className="productPage__btn"
+                          onClick={this.handleAddToBusketClick}
+                        >
+                          Add to cart
+                        </div>
+                      ) : (
+                        <p className="pdpOutOfStock">
+                          Product is out of stock...
+                        </p>
+                      )}
+                      <div className="productPage__descr">
+                        {parse(this.props.product.description)}
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
-          )}
+                )}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </Container>
     );
   }
 

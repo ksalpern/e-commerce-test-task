@@ -6,6 +6,7 @@ import { loadProducts } from "../store/productsReducer";
 
 import Cart from "../components/Cart";
 import "./ProductListing.css";
+import Container from "./Container";
 
 class ProductListing extends Component {
   componentDidMount() {
@@ -21,25 +22,27 @@ class ProductListing extends Component {
   }
   render() {
     return (
-      <div className="productListing">
-        <h1 className="productListing__header">{this.props.category}</h1>
+      <Container>
+        <div className="productListing">
+          <h1 className="productListing__header">{this.props.category}</h1>
 
-        {this.props.isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <div className="productListing__items">
-            {this.props.products.map((prod, index) => {
-              return (
-                <Cart
-                  product={prod}
-                  key={index}
-                  currency={this.props.currency}
-                />
-              );
-            })}
-          </div>
-        )}
-      </div>
+          {this.props.isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <div className="productListing__items">
+              {this.props.products.map((prod, index) => {
+                return (
+                  <Cart
+                    product={prod}
+                    key={index}
+                    currency={this.props.currency}
+                  />
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </Container>
     );
   }
 

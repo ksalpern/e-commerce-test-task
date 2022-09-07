@@ -2,25 +2,28 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import BusketItem from "./BusketItem";
+import Container from "./Container";
 
 class CartPage extends Component {
   render() {
     return (
       <Container>
-        <CartTitle>Cart</CartTitle>
-        {(this.props.busketProducts.length !== 0
-          ? this.props.busketProducts
-          : this.props.busketProducts
-        ).map((product, index) => {
-          return (
-            <BusketItem
-              busket={true}
-              key={product.id}
-              product={product}
-              productIndex={index}
-            />
-          );
-        })}
+        <CartContainer>
+          <CartTitle>Cart</CartTitle>
+          {(this.props.busketProducts.length !== 0
+            ? this.props.busketProducts
+            : this.props.busketProducts
+          ).map((product, index) => {
+            return (
+              <BusketItem
+                busket={true}
+                key={product.id}
+                product={product}
+                productIndex={index}
+              />
+            );
+          })}
+        </CartContainer>
       </Container>
     );
   }
@@ -34,7 +37,7 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(CartPage);
 
-const Container = styled.div`
+const CartContainer = styled.div`
   display: block;
   padding-right: calc(0px + (242 - 0) * ((100vw - 320px) / (1440 - 320)));
   padding-left: calc(10px + (100 - 10) * ((100vw - 320px) / (1440 - 320)));

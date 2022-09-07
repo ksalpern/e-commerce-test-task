@@ -125,6 +125,7 @@
   line-height: 27px;
   margin-bottom: 16px;
 }
+
 .nameBusket {
   font-family: "Raleway";
   font-size: 30px;
@@ -146,10 +147,7 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   flex-direction: column;
-
-
 }
 
 .busket__att-list {
@@ -159,7 +157,6 @@
   margin-top: 12px;
   justify-content: center;
   align-items: flex-start;
-  
 }
 
 .busket__att-name {
@@ -263,12 +260,10 @@
 .attListRowMinicart {
   display: flex;
   flex-direction: column;
-
   width: 100%;
   margin-top: 12px;
   justify-content: center;
   align-items: flex-start;
-  
 }
 
 .minicart__att-name {
@@ -363,11 +358,6 @@
 .pdpOutOfStock {
   font-size: 18px;
   font-weight: 500;
-}
-
-.currencySelectorList{
-  
- 
 }
 
 .currencySymbol {

@@ -54,15 +54,10 @@
 }
 
 .arrow{
-    transform: rotate(0deg);
     cursor: pointer;
     display: flex;
     align-items: center;
     margin-left: 6px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
 }
 
 .header__cart-logo{
