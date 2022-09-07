@@ -11,8 +11,8 @@
 .busket__modal {
   position: fixed;
   width: 325px;
-  height: 677px;
-  right: 72px;
+  height: 564px;
+  right: calc(13px + (72 - 13) * ((100vw - 320px) / (1440 - 320)));
   top: 78px;
   overflow: hidden;
   border: 1px solid #ccc;
@@ -152,23 +152,24 @@
 
 }
 
-.attNameBusket {
+.busket__att-list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 12px;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+.busket__att-name {
   font-family: 'Raleway';
   font-weight: 500;
   line-height: 24px;
   font-size: 18px;
 }
 
-.attListRowBusket {
-  display: flex;
-  width: 50%;
-  margin-top: 12px;
-  justify-content: space-between;
-  align-items: center;
-  
-}
-
-.attItemBusket {
+.busket__att-item {
   width: 63px;
   min-height: 45px;
   font-size: 16px;

@@ -78,9 +78,7 @@ class BusketItem extends Component {
             {this.props.product.brand}
           </div>
 
-          <div
-            className={this.props.busket ? "nameBusket" : "minicart__brand"}
-          >
+          <div className={this.props.busket ? "nameBusket" : "minicart__brand"}>
             {this.props.product.name}
           </div>
 
@@ -110,21 +108,25 @@ class BusketItem extends Component {
                   <div
                     className={
                       this.props.busket
-                        ? "attListRowBusket"
+                        ? "busket__att-list"
                         : "attListRowMinicart"
                     }
                     key={index}
                   >
                     <div
                       className={
-                        this.props.busket ? "attNameBusket" : "minicart__att-name"
+                        this.props.busket
+                          ? "busket__att-name"
+                          : "minicart__att-name"
                       }
                     >
                       {att.attId}
                     </div>
                     <div
                       className={
-                        this.props.busket ? "attItemBusket" : "minicart__att-item"
+                        this.props.busket
+                          ? "busket__att-item"
+                          : "minicart__att-item"
                       }
                       style={{
                         backgroundColor: att.attItemId.includes("#")
@@ -215,20 +217,38 @@ export default connect(mapStateToProps, mapDispatchToProps)(BusketItem);
 
 const ArrowLeft = styled.div`
   position: absolute;
-  left: 0%;
-  top: 50%;
+  right: 37%;
+  top: 90%;
   transform: translate(10%, -50%);
   cursor: pointer;
   font-size: 24px;
+  background: rgba(0, 0, 0, 0.73);
+  color: white;
+  width: 24px;
+  height: 20px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
+
 const ArrowRight = styled.div`
   position: absolute;
-  right: 0%;
-  top: 50%;
+  right: 11%;
+  top: 90%;
   transform: translate(-10%, -50%);
   cursor: pointer;
   font-size: 24px;
+  background: rgba(0, 0, 0, 0.73);
+  color: white;
+  width: 24px;
+  height: 20px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
+
 const DeleteItem = styled.div`
   position: absolute;
   background-color: red;

@@ -36,8 +36,8 @@ export default connect(mapStateToProps)(CartPage);
 
 const Container = styled.div`
   display: block;
-  padding-right: 242px;
-  padding-left: 100px;
+  padding-right: calc(0px + (242 - 0) * ((100vw - 320px) / (1440 - 320)));
+  padding-left: calc(10px + (100 - 10) * ((100vw - 320px) / (1440 - 320)));
 `;
 const CartTitle = styled.h2`
   font-family: Raleway;
@@ -45,6 +45,6 @@ const CartTitle = styled.h2`
   font-weight: 700;
   line-height: 40px;
   text-transform: uppercase;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: calc(10px + (0 - 10) * ((100vw - 320px) / (1440 - 320)));
+  margin-bottom: calc(20px + (80 - 20) * ((100vw - 320px) / (1440 - 320)));
 `;
