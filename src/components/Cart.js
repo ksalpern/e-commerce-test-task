@@ -31,7 +31,7 @@ class Cart extends Component {
   render() {
     return (
       <div
-        className="cart"
+      className="cart"
         style={{
           opacity: !this.props.product.inStock ? 0.5 : 1,
         }}
@@ -42,11 +42,11 @@ class Cart extends Component {
               <div key={index}>
                 {this.props.product.inStock && (
                   <div
-                    className="cart__toBusket"
+                  className="cart__toBusket"
                     id="CartToBusket"
                     onClick={this.handleAddToBusketClick}
                   >
-                    <img src={busket} alt="" />
+                      <img src={busket} alt="" />
                   </div>
                 )}
                 <Link

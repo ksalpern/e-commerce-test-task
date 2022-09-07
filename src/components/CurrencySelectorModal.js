@@ -70,8 +70,8 @@ const CurItem = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 160%;
-  padding: 8px 38px 8px 20px;
+  padding: 8px 38px 8px 20px; 
   &: hover {
-    background-color: #eeeeee;
+    background-color: #EEEEEE;
   }
 `;

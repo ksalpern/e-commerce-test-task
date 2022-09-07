@@ -8,7 +8,6 @@ import { loadProduct } from "../store/productReducer";
 import "./ProductPage.css";
 import "../App.css";
 import styled from "styled-components";
-import Container from "./Container";
 
 class ProductPage extends Component {
   constructor(props) {
@@ -99,7 +98,6 @@ class ProductPage extends Component {
 
   render() {
     return (
-      <Container>
         <div className="productPage__container">
           <div>
             {this.props.isLoading ? (
@@ -219,7 +217,6 @@ class ProductPage extends Component {
             )}
           </div>
         </div>
-      </Container>
     );
   }
 

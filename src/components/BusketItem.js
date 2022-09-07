@@ -51,7 +51,6 @@ class BusketItem extends Component {
       atts: this.props.product.chosenAtt,
     });
   }
-
   handleMinus(id) {
     this.props.saveCounterForProduct({
       type: "minus",
@@ -79,7 +78,9 @@ class BusketItem extends Component {
             {this.props.product.brand}
           </div>
 
-          <div className={this.props.busket ? "nameBusket" : "minicart__brand"}>
+          <div
+            className={this.props.busket ? "nameBusket" : "minicart__brand"}
+          >
             {this.props.product.name}
           </div>
 
@@ -116,18 +117,14 @@ class BusketItem extends Component {
                   >
                     <div
                       className={
-                        this.props.busket
-                          ? "busket__att-name"
-                          : "minicart__att-name"
+                        this.props.busket ? "busket__att-name" : "minicart__att-name"
                       }
                     >
                       {att.attId}
                     </div>
                     <div
                       className={
-                        this.props.busket
-                          ? "busket__att-item"
-                          : "minicart__att-item"
+                        this.props.busket ? "busket__att-item" : "minicart__att-item"
                       }
                       style={{
                         backgroundColor: att.attItemId.includes("#")

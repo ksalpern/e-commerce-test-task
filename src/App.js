@@ -7,6 +7,7 @@ import { loadCategories } from "./store/categoriesReducer";
 
 import ProductPage from "./components/ProductPage";
 import CartPage from "./components/CartPage";
+import Container from "./components/Container";
 import ProductListing from "./components/ProductListing";
 
 class App extends Component {
@@ -30,17 +31,25 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/">
-            <ProductListing />
+          <Route exact path="/cart">
+            <Container>
+              <CartPage />
+            </Container>
           </Route>
           <Route path="/:category/:id">
-            <ProductPage />
+            <Container>
+              <ProductPage />
+            </Container>
           </Route>
           <Route path="/:category">
-            <ProductListing />
+            <Container>
+              <ProductListing />
+            </Container>
           </Route>
-          <Route exact path="/cart">
-            <CartPage />
+          <Route path="/">
+            <Container>
+              <ProductListing />
+            </Container>
           </Route>
         </Switch>
       </Router>
